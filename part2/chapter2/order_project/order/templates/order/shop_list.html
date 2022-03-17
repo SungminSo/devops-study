@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for shop in shop_list %}
+<h5><a href="/order/menus/{{shop.id}}">{{ shop.shop_name }}</a></h5>
+<h5>{{ shop.shop_address }}</h5>
+{% endfor %}
+
+</body>
+</html>
