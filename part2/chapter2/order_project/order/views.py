@@ -47,13 +47,14 @@ def order(request):
     if request.method == 'GET':
         order_list = Order.objects.all()
         return render(request, 'order/order_list.html', {'order_list': order_list})
+
     elif request.method == 'POST':
         address = request.POST.get('address')
         shop = request.POST.get('shop')
         food_list = request.POST.getlist('menu')
         order_date = timezone.now()
 
-        shop_item = Shop.objects.get(pk=shop)
+        shop_item = Shop.objects.get(pk=int(shop))
         # Order에 Shop이 FK로 걸려있으므로 해당 shop 객체에서 '{FK 클래스(소문자)}_set' 사용
         shop_item.order_set.create(
             address=address,
@@ -66,4 +67,4 @@ def order(request):
         for food in food_list:
             order_item.orderfoodlist_set.create(food_name=food)
 
-        return HttpResponse(status=200)
+        return render(request, 'order/success.html')
