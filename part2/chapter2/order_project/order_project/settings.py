@@ -77,10 +77,18 @@ WSGI_APPLICATION = 'order_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# mysql 사용 시 로컬에서 'pip install mysqlclient'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'order_project',  # 사용할 DB 이름
+        'USER': 'admin',
+        'PASSWORD': 'qwer1234',
+        'HOST': '127.0.0.1',  # AWS RDS 사용시 해당 RDS 인스턴스의 엔드포인트
+        'PORT': 3306,  # mysql 기본 포트
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
