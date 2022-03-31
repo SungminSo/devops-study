@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=4f)jy7ao7h9x^k@3o3s4es3(caxaq-kw6nz0!b_9(^9e5eba-'
+SECRET_KEY = 'django-insecure-=4f)jy7ao7h9x^k@3o3s4es3(caxaq-kw6nz0!b_9(^9e5eba-'  # 배포 시 환경변수로 빼야 함
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  # EC2 배포 시 해당 엔드포인트를 추가해주어야 함
 
 
 # Application definition
