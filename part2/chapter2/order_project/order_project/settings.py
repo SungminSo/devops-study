@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-=4f)jy7ao7h9x^k@3o3s4es3(caxaq-kw6nz0!b_9(^9e5eba-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []  # EC2 배포 시 해당 엔드포인트를 추가해주어야 함
+# EC2 배포 시 해당 엔드포인트를 추가해주어야 함
+# ELB 연결 시 해당 엔드포인트도 추가해주어야 함
+ALLOWED_HOSTS = []
 
 
 # Application definition
