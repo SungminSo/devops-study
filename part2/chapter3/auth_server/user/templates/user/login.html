@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="{% url 'login' %}">
+        <ol>
+            <h4>가입하신 이름을 입력해주세요.</h4>
+            <input type="text" name="name" required>
+        </ol>
+        <input type="submit" value="로그인">
+    </form>
+</body>
+</html>
