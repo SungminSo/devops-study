@@ -26,3 +26,9 @@
 - 즉, 큰 데이터 암호화 시 CMK에서 Encryption algorithm을 통해서 data key를 2개 생성(plaintext data key와 encrypted data key)
 - plaintext data key를 활용해서 암호화하고, 암호화가 완료되면 해당 plaintext data key는 삭제
 - 이후에 복호화 시에는 encrypted data key로 바로 복호화 할 수는 없고, CMK를 통해서 encrypted data key를 다시 plaintext data key로 바꿔준 후 데이터 복호화
+
+
+## KMS 활용 실습
+- 키 구성 시 키 유형은 `대칭`인것이 조금 더 편함
+- 키 권한에서 사용자는 데이터 복호화만 가능하고, 관리자는 그 외의 모든 기능도 사용가능
+- 코드내에서 외부에 노출되면 안되는 문자열(ex. boto3 access key/secret key) 등을 암호화해서 코드 또는 해당 서버 어딘가에 저장하고, 사용할 때 복호화해서 사용
